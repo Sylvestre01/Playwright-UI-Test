@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "@playwright/test": "^1.45.3",
+    "@types/node": "^22.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "scripts": {
+    "ui:test": "playwright test --ui",
+    "pw-test": "npx playwright test --reporter=html",
+    "pw-report": "npx playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Sylvestre01/Playwright-UI-Test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sylvestre01/Playwright-UI-Test/issues"
+  },
+  "homepage": "https://github.com/Sylvestre01/Playwright-UI-Test#readme",
+  "author": "Sylvester Udoh",
+  "license": "ISC"
+}
