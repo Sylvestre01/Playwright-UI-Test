@@ -6,7 +6,7 @@
     "typescript": "^5.5.4"
   },
   "scripts": {
-    "ui:test": "playwright test --ui",
+    "ui:test": "playwright test",
     "pw-test": "npx playwright test --reporter=html",
     "pw-report": "npx playwright show-report"
   },
