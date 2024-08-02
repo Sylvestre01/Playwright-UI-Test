@@ -1,9 +1,9 @@
-import { test } from "../Fixtures/fixtures";
+import { test } from "../fixtures/fixture";
 import {describe} from "node:test";
 
 describe("Items sorting test", () => {
 
-    test.beforeEach("Go to https://www.saucedemo.com/ and login " , async ({ loginPage }) => {
+    test.beforeEach("Go to https://www.saucedemo.com and login " , async ({ loginPage }) => {
         await loginPage.launchURL();
         await loginPage.login("standard_user", "secret_sauce");
     });
