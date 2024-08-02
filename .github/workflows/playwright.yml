@@ -8,20 +8,26 @@ jobs:
   playwright:
     name: 'Playwright UI Test'
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.43.0-jammy
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
-        node-version: lts/*
+        node-version: 18
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Playwright UI test
-      run: npm run ui:test
-    - uses: actions/upload-artifact@v4
-      if: always()
+      run: npm run ui:test --reporter=html
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
       with:
-        name: playwright-report
-        path: playwright-report/
+       name: playwright-results
+       path: playwright-report  # This is where Playwright reports are generated
+      env:
+       HOME: /root
+
 
